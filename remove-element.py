@@ -52,6 +52,8 @@ Constraints:
 
 
 """
+from os import remove
+
 
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
@@ -65,3 +67,12 @@ class Solution:
 
         return k
 
+sol = Solution()
+
+nums = [3, 2, 2, 3, 0, 4, 2]
+val = 2
+
+k = sol.removeElement(nums, val)
+
+print("k =", k)
+print("nums =", nums)
