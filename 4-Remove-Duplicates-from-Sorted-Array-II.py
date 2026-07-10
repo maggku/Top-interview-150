@@ -48,6 +48,7 @@ Constraints:
     nums is sorted in non-decreasing order.
 
 """
+from typing import List
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
@@ -61,3 +62,15 @@ class Solution:
                 k += 1
         return k
 
+assert Solution().removeDuplicates(nums=[1,1,1,2,2,3]) == 5
+assert Solution().removeDuplicates(nums=[0,0,1,1,1,1,2,3,3]) == 7
+
+def check(nums, expected):
+    sol = Solution()
+    k = sol.removeDuplicates(nums)
+    assert k == len(expected), f"expected k={len(expected)}, got {k}"
+    assert nums[:k] == expected, f"expected {expected}, got {nums[:k]}"
+    print("passed:", nums[:k])
+
+check([1,1,1,2,2,3], [1,1,2,2,3])
+check([0,0,1,1,1,1,2,3,3], [0,0,1,1,2,3,3])
