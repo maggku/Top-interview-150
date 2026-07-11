@@ -36,3 +36,15 @@ Follow up:
     Could you do it in-place with O(1) extra space?
 
 """
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        k = k % len(nums)
+        if k == 0:
+            return nums
+
+        first = nums[:-k]
+        last = nums[(len(nums) - k):]
+        nums[:] = last + first
