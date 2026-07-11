@@ -48,3 +48,17 @@ class Solution:
         for num, count in counts.items():
             if count > len(nums) // 2:
                 return num
+
+"""
+There's a classic trick for this called the Boyer-Moore Voting Algorithm. Here's the intuition before I show code:
+Imagine you keep a candidate and a count. You walk through the array once:
+
+If your count is 0, you pick the current number as your new candidate.
+If the current number matches your candidate, you count += 1.
+If it doesn't match, you count -= 1.
+
+The idea: think of it like a "tug of war" — the majority number effectively cancels out one occurrence of every other number it's paired against, and because it appears more than half the time, it can never fully get cancelled out. It'll always survive as the candidate by the end.
+Want to try tracing this through [2,2,1,1,1,2,2] by hand first (tracking candidate and count at each step) to see if you believe it survives? That's usually the best way to get the "aha" moment before coding it."""
+
+assert Solution().majorityElement([3,2,3]) == 3
+assert Solution().majorityElement([2,2,1,1,1,2,2]) == 2
