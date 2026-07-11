@@ -26,4 +26,25 @@ Constraints:
 
 
 Follow-up: Could you solve the problem in linear time and in O(1) space?
+
 """
+
+
+class Solution:
+    def majorityElement(self, nums: List[int]) -> int:
+
+        # use a dictionary to count numbers
+
+        counts = {}
+
+        for num in nums:
+            if num in counts:
+                counts[num] += 1
+            else:
+                counts[num] = 1
+
+        # check witch is a majority element
+
+        for num, count in counts.items():
+            if count > len(nums) // 2:
+                return num
