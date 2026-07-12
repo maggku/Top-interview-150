@@ -48,3 +48,7 @@ class Solution:
                 profit += prices[i] - prices[i -1]
 
         return profit
+
+assert Solution().maxProfit([7,1,5,3,6,4]) == 5
+assert Solution().maxProfit([7,6,4,3,1]) == 0
+assert Solution().maxProfit([7,1,5,3,6,4]) == 4
