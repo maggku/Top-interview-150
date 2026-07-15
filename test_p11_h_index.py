@@ -26,7 +26,7 @@ Constraints:
     0 <= citations[i] <= 1000
 
 """
-
+from typing import List
 
 class Solution:
     def hIndex(self, citations: List[int]) -> int:
@@ -42,3 +42,16 @@ class Solution:
                 break
 
         return h_index
+
+
+def test_example_1():
+    sol = Solution()
+    assert sol.hIndex([3, 0, 6, 1, 5]) == 3
+
+def test_all_zero():
+    sol = Solution()
+    assert sol.hIndex([0, 0, 0]) == 0
+
+def test_single_paper():
+    sol = Solution()
+    assert sol.hIndex([100]) == 1

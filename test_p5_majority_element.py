@@ -1,3 +1,5 @@
+from typing import List
+
 """
 Given an array nums of size n, return the majority element.
 

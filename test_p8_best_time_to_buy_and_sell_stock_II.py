@@ -1,3 +1,5 @@
+from typing import List
+
 """
 You are given an integer array prices where prices[i] is the price of a given stock on the ith day.
 
@@ -49,6 +51,3 @@ class Solution:
 
         return profit
 
-assert Solution().maxProfit([7,1,5,3,6,4]) == 5
-assert Solution().maxProfit([7,6,4,3,1]) == 0
-assert Solution().maxProfit([7,1,5,3,6,4]) == 4

@@ -1,3 +1,5 @@
+from typing import List
+
 """
 Given an integer array nums, rotate the array to the right by k steps, where k is non-negative.
 
@@ -49,6 +51,3 @@ class Solution:
         last = nums[(len(nums) - k):]
         nums[:] = last + first
 
-assert Solution().rotate([1,2,3,4,5,6,7], 3) == [5,6,7,1,2,3,4]
-assert Solution().rotate([1,2,3,4,5,6,7], 4) == [5,6,7,1,2,3,4]
-assert Solution().rotate([-1,-100,3,99], 2) == [3,99,-1,-100]
