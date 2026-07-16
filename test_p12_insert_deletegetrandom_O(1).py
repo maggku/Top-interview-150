@@ -29,3 +29,15 @@ randomizedSet.insert(2); // 2 was already in the set, so return false.
 randomizedSet.getRandom(); // Since 2 is the only number in the set, getRandom() will always return 2.
 
 """
+
+
+def __init__(self):
+    self.l = []
+    self.d = {}
+
+def insert(self, val: int) -> bool:
+    if val in self.d:
+        return False
+    self.d[val] = len(self.l)
+    self.l.append(val)
+    return True
