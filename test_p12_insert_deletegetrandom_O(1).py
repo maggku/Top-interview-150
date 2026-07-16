@@ -41,3 +41,28 @@ def insert(self, val: int) -> bool:
     self.d[val] = len(self.l)
     self.l.append(val)
     return True
+
+def remove(self, val: int) -> bool:
+    if val not in self.d:
+        return False
+
+    # point to the last value in the list and point to the place where the desired number for removal is
+    index_to_remove = self.d[val]
+    last_val = self.l[-1]
+
+    # replace the val with the last number in the list
+    self.l[index_to_remove] = last_val
+    self.d[last_val] = index_to_remove
+
+    # remove the last value in the list - its a duplicate
+    self.l.pop()
+
+    # remove the val from the dictionary. we do not need it anymore
+    del self.d[val]
+
+    # return True
+    return True
+
+def getRandom(self) -> int:
+    return random.choice(self.l)
+
