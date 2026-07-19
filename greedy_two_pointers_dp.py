@@ -22,6 +22,25 @@ def solution(nums, t):
 
 #Two pointers
 
+def solution_two_pointers(nums, t):
+    left = 0
+    right = len(nums) - 1
+    nums.sort()
+
+    while left < right:
+        current_sum = nums[left] + nums[right]
+        if current_sum == t:
+            return True
+        elif current_sum > t:
+            left += 1
+        else:
+            right -= 1
+
+    return False
+
+
+
+
 #Greedy
 
 #DP
