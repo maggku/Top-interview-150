@@ -43,4 +43,14 @@ def solution_two_pointers(nums, t):
 
 #Greedy
 
+def solution_greedy(nums, t):
+    seen = set()
+    for num in nums:
+        complement = t - num
+        if complement in seen:
+            return True
+        seen.add(num)
+
+    return False
+
 #DP
