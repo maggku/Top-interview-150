@@ -28,3 +28,13 @@ Constraints:
     s and t consist of lowercase English letters.
 
 """
+from collections import Counter
+
+class Solution:
+    def findTheDifference(self, s: str, t: str) -> str:
+
+        count_t = Counter(t)
+        count_s = Counter(s)
+        diff = count_t - count_s
+
+        return list(diff)[0]
