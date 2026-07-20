@@ -24,7 +24,7 @@ Constraints:
     haystack and needle consist of only lowercase English characters.
 
 """
-
+from typing import List
 
 class Solution:
     def strStr(self, haystack: str, needle: str) -> int:
@@ -38,13 +38,8 @@ class Solution:
         return -1
 
 
-import unittest
-
-
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)  # add assertion here
-
-
-if __name__ == '__main__':
-    unittest.main()
+if __name__ == "__main__":
+    sol = Solution()
+    assert sol.strStr("sadbutsad", "sad") == 0
+    assert sol.strStr("leetcode", "leeto") == -1
+    print("all passed")
