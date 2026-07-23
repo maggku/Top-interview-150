@@ -28,3 +28,20 @@ Constraints:
     s consists of lowercase English letters.
 
 """
+
+class Solution:
+    def repeatedSubstringPattern(self, s: str) -> bool:
+        n = len(s)
+
+        # chose a range that is half the lenth
+        for length in range(1, n // 2 + 1):
+            #check if lenth fiths in n without extras
+            if n % length != 0:
+                continue
+                #build a piece
+            piece = s[:length]
+            #check if you can build s with multiplying piece with n//lenth
+            if piece * (n // length) == s:
+                return True
+
+        return False
