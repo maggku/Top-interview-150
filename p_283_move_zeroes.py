@@ -41,3 +41,8 @@ class Solution:
 
         for i in range(insert_pos, len(nums)):
             nums[i] = 0
+
+assert Solution().moveZeroes([0,1,0,3,12]) == [0,1,2,3,12]
+assert Solution().moveZeroes([]) == []
+assert Solution().moveZeroes([0]) == [0]
+assert Solution().moveZeroes([1]) == [1]
