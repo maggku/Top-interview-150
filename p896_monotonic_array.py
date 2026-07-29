@@ -30,3 +30,16 @@ Constraints:
     -105 <= nums[i] <= 105
 
 """
+
+
+class Solution:
+    def isMonotonic(self, nums: List[int]) -> bool:
+        incresing = sorted(nums)
+        decresing = sorted(nums, reverse=True)
+
+        if incresing == nums:
+            return True
+        elif decresing == nums:
+            return True
+
+        return False
