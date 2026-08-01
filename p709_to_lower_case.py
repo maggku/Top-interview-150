@@ -35,3 +35,6 @@ class Solution:
         return "".join(x)
 
 
+class Solution:
+    def toLowerCase(self, s: str) -> str:
+        return s.lower()
