@@ -26,3 +26,12 @@ Constraints:
     s consists of printable ASCII characters.
 
 """
+
+class Solution:
+    def toLowerCase(self, s: str) -> str:
+        x = []
+        for l in s:
+            x.append(l.lower())
+        return "".join(x)
+
+
