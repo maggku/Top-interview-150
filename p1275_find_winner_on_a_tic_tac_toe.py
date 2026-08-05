@@ -26,3 +26,18 @@ class Solution:
             player = 'A' if i % 2 == 0 else 'B'
             symbol = 'X' if player == 'A' else 'O'
             grid[row][col] = symbol
+
+            # Check row
+            if all(grid[row][c] == symbol for c in range(3)):
+                return player
+            # Check column
+            if all(grid[r][col] == symbol for r in range(3)):
+                return player
+            # Check main diagonal
+            if row == col and all(grid[i][i] == symbol for i in range(3)):
+                return player
+            # Check anti-diagonal
+            if row + col == 2 and all(grid[i][2 - i] == symbol for i in range(3)):
+                return player
+
+        return "Draw" if len(moves) == 9 else "Pending"
