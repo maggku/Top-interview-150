@@ -14,3 +14,15 @@ You can assume that moves is valid (i.e., it follows the rules of Tic-Tac-Toe), 
 
 
 """
+
+
+class Solution:
+    def tictactoe(self, moves):
+        grid = [[' ' for _ in range(3)] for _ in range(3)]
+        player = 'A'
+
+        for i, (row, col) in enumerate(moves):
+            # A plays on even indices (0, 2, 4...), B on odd indices
+            player = 'A' if i % 2 == 0 else 'B'
+            symbol = 'X' if player == 'A' else 'O'
+            grid[row][col] = symbol
