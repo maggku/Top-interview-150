@@ -59,3 +59,20 @@ Repeating the instructions, the robot goes into the cycle: (0, 0) --> (0, 1) -->
 Based on that, we return true.
 
 """
+
+class Solution:
+    def isRobotBounded(self, instructions: str) -> bool:
+
+        x, y = 0, 0
+        dx, dy = 0, 1
+
+        for move in instructions:
+            if move == "G":
+                x += dx
+                y += dy
+            elif move =="L":
+                dx, dy = -dy, dx
+            else:
+                dx, dy = dy, -dx
+
+        return (x == 0 and y == 0) or (dx, dy) != (0, 1)
