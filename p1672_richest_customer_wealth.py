@@ -30,3 +30,12 @@ Input: accounts = [[2,8,7],[7,1,3],[1,9,5]]
 Output: 17
 
 """
+class Solution:
+    def maximumWealth(self, accounts: List[List[int]]) -> int:
+        max_wealth = 0
+        for customer in accounts:
+            customer_sum = sum(customer)
+            if customer_sum > max_wealth:
+                max_wealth = customer_sum
+
+        return max_wealth
