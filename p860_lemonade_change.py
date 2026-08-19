@@ -36,3 +36,24 @@ Constraints:
 
 
 """
+class Solution:
+    def lemonadeChange(self, bills: List[int]) -> bool:
+        bank = {5:0,10:0,20:0}
+        for bill in bills:
+            bank[bill] += 1
+            if bill == 5:
+                continue
+            elif bill == 10:
+                if bank[5]>0:
+                    bank[5]-=1
+                else:
+                    return False
+            elif bill == 20:
+                if bank[5]>0 and bank[10]>0:
+                    bank[5]-=1
+                    bank[10]-=1
+                elif bank[5]>2:
+                    bank[5]-=3
+                else:
+                    return False
+        return True
