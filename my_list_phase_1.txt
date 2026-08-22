@@ -1,0 +1,212 @@
+Here are 20 string problems, ordered so patterns build on each other rather than randomly:
+
+Basics — manipulation & traversal
+
+Merge Strings Alternately (1768) — simple two-pointer warm-up
+Reverse String (344) — in-place two-pointer basics
+Valid Palindrome (125) — two-pointer + character filtering
+Is Subsequence (392) — two-pointer, different direction of thinking
+
+Hashmap-driven
+5. Valid Anagram (242) — character frequency counting
+6. Group Anagrams (49) — hashmap with array/string as key
+7. Ransom Note (383) — frequency counting variant
+8. First Unique Character in a String (387) — hashmap + order tracking
+
+Greedy / simulation
+9. Roman to Integer (13) — simulation with lookahead logic
+10. Integer to Roman (12) — greedy construction
+11. String Compression (443) — in-place two-pointer + write logic
+12. Zigzag Conversion (6) — simulation, index math
+
+Sliding window (core string pattern)
+13. Longest Substring Without Repeating Characters (3) — classic sliding window
+14. Minimum Window Substring (76) — hard sliding window, worth doing early to see the ceiling
+15. Find All Anagrams in a String (438) — sliding window + frequency map combo
+
+Prefix / suffix / building
+16. Longest Common Prefix (14) — simple but tests edge-case handling
+17. Reverse Words in a String (151) — in-place manipulation, real-world messy input
+18. Gas Station (skip — not a string problem, ignore if seen elsewhere)
+
+Correction — replacing #18:
+18. Longest Palindromic Substring (5) — expand-around-center, sets you up for DP later
+
+String matching / parsing
+19. Implement strStr() (28) — basic pattern matching, intro to KMP if you want to go deeper
+20. Valid Parentheses (20) — technically stack, but string-based and commonly grouped here — great transition into the Stack section next
+
+A note on sequencing: problems 13–15 (sliding window) are the ones that really separate "I can manipulate strings" from "I can reason about substrings efficiently." Don't rush those — if 76 feels brutal at first, that's normal; it's often used as a benchmark problem.
+
+Want me to do the same for the Two Pointers section next, so you have a clean handoff once you finish these?
+
+Here are the Two Pointers problems, sequenced to build naturally off what you just did in Strings:
+
+Basics — opposite-direction pointers
+
+Valid Palindrome (125) — you already did this in Strings; it's the canonical intro to this pattern
+Two Sum II - Input Array Is Sorted (167) — the purest form of opposite-direction two pointers
+Reverse String (344) — also a repeat, but worth noting as the in-place swap pattern
+Squares of a Sorted Array (977) — opposite pointers + merge logic
+
+Container / area problems
+5. Container With Most Water (11) — classic greedy two-pointer, teaches "move the smaller side" logic
+6. Trapping Rain Water (42) — the natural next step up in difficulty from #5, same core idea extended
+
+Same-direction / fast-slow pointers
+7. Remove Duplicates from Sorted Array (26) — write-pointer + read-pointer pattern
+8. Remove Duplicates from Sorted Array II (80) — same pattern, adds a counting constraint
+9. Move Zeroes (283) — same-direction pointer, in-place shifting
+10. Remove Element (27) — simple write-pointer warm-up if you want extra reps
+
+Three pointers / combining with sorting
+11. 3Sum (15) — sort + fix one pointer + two-pointer inward search — a big milestone problem
+12. 3Sum Closest (16) — same skeleton as 3Sum, teaches tracking "best so far"
+13. 4Sum (18) — extends 3Sum with an extra nested loop, good for solidifying the pattern
+
+Linked list two pointers (fast/slow — different data structure, same idea)
+14. Linked List Cycle (141) — fast/slow pointer intro
+15. Middle of the Linked List (876) — fast/slow pointer, simpler than cycle detection
+16. Remove Nth Node From End of List (19) — gap-based two pointers
+
+String/array hybrid — a level up
+17. Boat to Save People (881) — greedy two-pointer, less obvious setup than Container With Water
+18. Sort Colors (75) — Dutch national flag problem, three-pointer partitioning, genuinely important pattern
+19. Backspace String Compare (844) — reverse traversal two pointers, string-flavored
+
+Capstone
+20. Trapping Rain Water II (407) — skip this one for now, it's a heap/matrix hybrid, way out of scope here.
+
+Replacing #20:
+20. Palindromic Substrings (647) — expand-around-center (same idea as Longest Palindromic Substring from your string list), a nice bridge into the DP-adjacent thinking that'll show up later
+
+A few notes:
+
+3Sum (11) is the real turning point in this section — it combines sorting + two pointers + duplicate handling, and shows up constantly in interviews. Don't rush it.
+Sort Colors (18) looks simple but the three-pointer partition logic is a pattern that reappears in quickselect and partition-based algorithms later, so it's worth internalizing properly, not just solving once.
+Items 14–16 shift into linked lists, which is technically a different section in the Top 150 — but the fast/slow pointer idea is 100% the same skill, so doing them here means Linked List section will feel like a breeze later.
+
+
+Here are the Sliding Window problems, sequenced from basic to advanced:
+
+Fixed-size window — the simplest form
+
+Maximum Average Subarray I (643) — fixed window sum, the cleanest intro
+Find All Anagrams in a String (438) — you saw this in Strings; fixed window + frequency map
+
+Variable-size window — expand and shrink
+3. Longest Substring Without Repeating Characters (3) — repeat from Strings; the foundational variable window problem
+4. Fruit Into Baskets (904) — variable window with a "at most K distinct" constraint, same skeleton as #3
+5. Max Consecutive Ones III (1004) — variable window with a "budget" (flips allowed) instead of distinct count
+
+Shrink-from-left pattern (condition-based)
+6. Minimum Size Subarray Sum (209) — shrink window once sum condition is met, classic template
+7. Longest Repeating Character Replacement (424) — variable window + frequency map + a replacement budget
+8. Minimum Window Substring (76) — repeat from Strings; the hardest "shrink from left" problem, combines everything above
+
+Counting subarrays (not just longest/shortest)
+9. Subarray Product Less Than K (713) — counting valid windows, not just finding one
+10. Number of Substrings Containing All Three Characters (1358) — counting + frequency map combo
+
+Two-pointer/window hybrids
+11. Permutation in String (567) — fixed window + frequency map, sibling problem to #2
+12. Longest Substring with At Most Two Distinct Characters (159) — same shape as Fruit Into Baskets, good repetition
+13. Longest Substring with At Most K Distinct Characters (340) — generalizes #12, premium/locked on some plans but worth knowing
+
+Prefix sum + window (bridges into other topics)
+14. Subarray Sum Equals K (560) — technically prefix sum + hashmap, not pure sliding window, but commonly grouped here since it looks like a window problem — good for pattern-recognition training
+15. Continuous Subarray Sum (523) — same prefix sum + hashmap idea, adds a modulo condition
+
+Harder / capstone
+16. Sliding Window Maximum (239) — monotonic deque, a real step up in difficulty, important for the Stack section later too
+17. Sliding Window Median (480) — heap-based, hard, optional but good if you want the full picture
+18. Frequency of the Most Frequent Element (1838) — sort + variable window + budget, nice combo problem
+19. Count Number of Nice Subarrays (1248) — variable window with a parity/count condition, good final practice
+20. Minimum Number of K Consecutive Bit Flips (995) — window + greedy simulation, a solid capstone that ties window thinking to greedy logic
+
+A couple of things worth flagging for later, since you're just saving this for now:
+
+#14 and #15 aren't strictly sliding window — they sneak in prefix-sum + hashmap thinking, which is a great "gotcha" to notice, since window problems and prefix-sum problems often look identical at first glance but need different tools.
+#16 (Sliding Window Maximum) is the one most people get stuck on. It needs a monotonic deque, which is a new data structure pattern — don't worry if it takes a few tries.
+
+Good luck working through the batches — happy to pick back up on Matrix, Hashmap, or whatever's next whenever you're ready.
+
+Want to be notified when Claude responds?
+
+
+
+
+Incognito chats aren’t saved to history or used to train models.
+
+STRINGS
+
+1.Merge Strings Alternately (1768)
+2.Reverse String (344)
+3.Valid Palindrome (125)
+4.Is Subsequence (392)
+5.Valid Anagram (242)
+6.Group Anagrams (49)
+7.Ransom Note (383)
+8.First Unique Character in a String (387)
+9.Roman to Integer (13)
+10.Integer to Roman (12)
+11.String Compression (443)
+12.Zigzag Conversion (6)
+13.Longest Substring Without Repeating Characters (3)
+14.Minimum Window Substring (76)
+15.Find All Anagrams in a String (438)
+16.Longest Common Prefix (14)
+17.Reverse Words in a String (151)
+18.Longest Palindromic Substring (5)
+19.Implement strStr() (28)
+20.Valid Parentheses (20)
+
+TWO POINTERS
+21. Two Sum II - Input Array Is Sorted (167)
+22. Squares of a Sorted Array (977)
+23. Container With Most Water (11)
+24. Trapping Rain Water (42)
+25. Remove Duplicates from Sorted Array (26)
+26. Remove Duplicates from Sorted Array II (80)
+27. Move Zeroes (283)
+28. Remove Element (27)
+29. 3Sum (15)
+30. 3Sum Closest (16)
+31. 4Sum (18)
+32. Linked List Cycle (141)
+33. Middle of the Linked List (876)
+34. Remove Nth Node From End of List (19)
+35. Boat to Save People (881)
+36. Sort Colors (75)
+37. Backspace String Compare (844)
+38. Palindromic Substrings (647)
+
+SLIDING WINDOW
+39. Maximum Average Subarray I (643)
+40. Fruit Into Baskets (904)
+41. Max Consecutive Ones III (1004)
+42. Minimum Size Subarray Sum (209)
+43. Longest Repeating Character Replacement (424)
+44. Subarray Product Less Than K (713)
+45. Number of Substrings Containing All Three Characters (1358)
+46. Permutation in String (567)
+47. Longest Substring with At Most Two Distinct Characters (159)
+48. Longest Substring with At Most K Distinct Characters (340)
+49. Subarray Sum Equals K (560)
+50. Continuous Subarray Sum (523)
+51. Sliding Window Maximum (239)
+52. Sliding Window Median (480)
+53. Frequency of the Most Frequent Element (1838)
+54. Count Number of Nice Subarrays (1248)
+55. Minimum Number of K Consecutive Bit Flips (995)
+
+Note: A few problems (Valid Palindrome, Reverse String, Longest Substring Without Repeating Characters, Minimum Window Substring, Find All Anagrams, Longest Palindromic Substring) appear across sections because they legitimately teach overlapping skills — no need to redo them, just count them once when you cross paths with them again.
+
+That's 55 problems total for Phase 1. Good luck — come back anytime for Matrix or the next phase.
+
+Want to be notified when Claude responds?
+
+
+
+
+Incognito chats aren’t saved to history or used to train models.
