@@ -51,3 +51,21 @@ class Solution:
                 j += 1
 
         return "".join(merged)
+
+    class Solution:
+        def mergeAlternately(self, word1: str, word2: str) -> str:
+
+            x = 0
+            y = 0
+
+            merged = []
+
+            while x < len(word1) or y < len(word2):
+                if x < len(word1):
+                    merged.append(word1[x])
+                    x += 1
+                if y < len(word2):
+                    merged.append(word2[y])
+                    y += 1
+
+            return "".join(merged)
