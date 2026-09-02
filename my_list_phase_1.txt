@@ -3,7 +3,7 @@ Here are 20 string problems, ordered so patterns build on each other rather than
 Basics — manipulation & traversal
 
 
-Reverse String (344) — in-place two-pointer basics
+
 Valid Palindrome (125) — two-pointer + character filtering
 Is Subsequence (392) — two-pointer, different direction of thinking
 
