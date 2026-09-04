@@ -28,3 +28,17 @@ Output: [1,2]
 Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We return [1, 2].
 
 """
+class Solution:
+    def twoSum(self, numbers: List[int], target: int) -> List[int]:
+
+        left = 0
+        right = len(numbers) - 1
+
+        while left < right:
+            if numbers[left] + numbers[right] == target:
+                return [left + 1,right + 1]
+            elif numbers[left] + numbers[right] < target:
+                left += 1
+            else:
+                right -= 1
+        return []
