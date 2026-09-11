@@ -65,3 +65,22 @@ class Solution:
                 k+=1
 
         return k
+
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+
+        if not nums:
+            return 0
+
+        slow = 0
+        n = len(nums)
+        k = 1
+
+        for fast in range(1, n):
+            if nums[fast] != nums[slow]:
+                slow += 1
+                k += 1
+                nums[slow] = nums[fast]
+
+
+        return k
