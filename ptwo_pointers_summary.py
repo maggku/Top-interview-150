@@ -3,7 +3,7 @@ array = [1,2,3,4,5,6,7,8,9]
 target = 8
 
 
-class TwoSumII:
+def twosum(array):
     left = 0
     right = len(array)-1
 
@@ -16,4 +16,17 @@ class TwoSumII:
             return [left + 1, right + 1]
 
     return []
+
+"""Valid Palindrome"""
+
+def palindrome(array):
+    left = 0
+    right = len(array)-1
+    while left < right:
+        if array[left] == array[right]:
+            left += 1
+            right -= 1
+        else:
+            return False
+    return True
 
