@@ -58,3 +58,6 @@ class Solution:
                 b = b.next
             a = a.next
         return None
+
+
+# 2 pointers

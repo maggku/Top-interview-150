@@ -36,5 +36,29 @@ Constraints:
     -105 <= nums[i] <= 105
 """
 
-# 2 pointers
 
+class Solution:
+    def threeSum(self, nums: list[int]) -> list[list[int]]:
+        nums.sort()
+        answer = []
+
+        for k in range(len(nums)):
+            if k != 0 and nums[k] == nums[k - 1]:
+                continue
+
+            left = k + 1
+            right = len(nums) - 1
+
+            while left < right:
+                total = nums[k] + nums[left] + nums[right]
+                if total < 0:
+                    left += 1
+                elif total > 0:
+                    right -= 1
+                else:
+                    answer.append([nums[k], nums[left], nums[right]])
+                    left += 1
+                    while left < right and nums[left] == nums[left - 1]:
+                        left += 1
+
+        return answer
