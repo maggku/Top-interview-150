@@ -35,18 +35,6 @@ Constraints:
     3 <= nums.length <= 3000
     -105 <= nums[i] <= 105
 """
-### brute force first
-class Solution:
-    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
 
-       a = headA
-        while a:
-            b = headB
-            while b:
-                if a is b:
-                    return a
-                b = b.next
-            a = a.next
-        return None
 # 2 pointers
 
