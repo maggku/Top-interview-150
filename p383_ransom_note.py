@@ -25,3 +25,16 @@ Constraints:
 
     1 <= ransomNote.length, magazine.length <= 105
 """
+
+class Solution:
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        #make a dictionary magazine from the magazine
+
+        letters = collections.Counter(magazine)
+
+        for item in ransomNote:
+            if letters[item] > 0:
+                letters[item] -= 1
+            else:
+                return False
+        return True
