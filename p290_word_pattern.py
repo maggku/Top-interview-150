@@ -34,4 +34,28 @@ Input: pattern = "aaaa", s = "dog cat cat dog"
 
 Output: false
 
+
+
 """
+
+class Solution:
+    def wordPattern(self, pattern: str, s: str) -> bool:
+
+        pattern = list(pattern)
+        s = s.split()
+
+        if len(s) != len(pattern):
+            return False
+
+        pattern_to_s, s_to_pattern = {}, {}
+
+        for a, b in zip(s, pattern):
+            if a in s_to_pattern and s_to_pattern[a] != b:
+                return False
+            elif b in pattern_to_s and pattern_to_s[b] != a:
+                return False
+            else:
+                s_to_pattern[a] = b
+                pattern_to_s[b] = a
+
+        return True
