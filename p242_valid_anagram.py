@@ -44,3 +44,18 @@ class Solution:
             t_dict[l] = t_dict.get(l, 0) + 1
 
         return s_dict == t_dict
+
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+
+        if len(s) != len(t):
+            return False
+
+        dict_s = collections.Counter(s)
+
+        for letter in t:
+            if letter not in dict_s or dict_s[letter] == 0:
+                return False
+            else:
+                dict_s[letter] -= 1
+        return True
