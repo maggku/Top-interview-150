@@ -34,3 +34,25 @@ Constraints:
 
 
 """
+
+
+class Solution:
+    def isHappy(self, n: int) -> bool:
+
+        seen = set()
+
+        while n != 1:
+            if n in seen:
+                return False
+            else:
+                seen.add(n)
+                n = sumOfSquares(n)
+        return True
+
+    def sum_of_squares(num: int) -> int:
+        total = 0
+        while num > 0:
+            digit = num % 10  # get last digit
+            total += digit ** 2  # square it and add
+            num //= 10  # remove last digit
+        return total
