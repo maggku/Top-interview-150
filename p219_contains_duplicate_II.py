@@ -27,3 +27,17 @@ Constraints:
     0 <= k <= 105
 
 """
+
+
+class Solution:
+    def containsNearbyDuplicate(self, nums: list[int], k: int) -> bool:
+
+        seen = {}
+
+        for i, num in enumerate(nums):
+            if num in seen:
+                if i - seen[num] <= k:
+                    return True
+            seen[num] = i
+        else:
+            return False
