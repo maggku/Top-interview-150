@@ -41,3 +41,9 @@ class Solution:
             seen[num] = i
         else:
             return False
+
+assert not Solution().containsNearbyDuplicate([1], 1)
+assert not Solution().containsNearbyDuplicate([1, 1], 0)
+assert Solution().containsNearbyDuplicate([5, 5, 5, 5], 1)
+assert not Solution().containsNearbyDuplicate([1, 2, 3, 4, 1], 3)
+assert Solution().containsNearbyDuplicate([1, 2, 3, 1], 3)
