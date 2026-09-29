@@ -29,3 +29,20 @@ Constraints:
     -109 <= nums[i] <= 109
 
 """
+
+class Solution:
+    def longestConsecutive(self, nums: list[int]) -> int:
+
+        nums_set = set(nums)
+        counter = 0
+        longest = 0
+
+        for num in nums_set:
+            if num - 1 not in nums_set:
+                current = num
+                counter = 1
+                while current + 1 in nums_set:
+                    counter += 1
+                    current += 1
+                longest = max(longest, counter)
+        return longest
