@@ -52,3 +52,12 @@ class Solution:
             right -= 1
 
         return " ".join(s)
+
+class Solution:
+    def reverseWords(self, s: str) -> str:
+
+        # "the sky is blue" -> ["the", "sky", "is", "blue"]
+
+        s = s.split()
+
+        return " ".join(reversed(s))
