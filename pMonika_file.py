@@ -10,3 +10,9 @@ emails = [
   {"sender": "office@school.uk", "subject": "Parents' evening", "message": "Book a slot online"},
 
 ]
+
+def hello():
+  print("Hello World")
+
+hello()
+print
