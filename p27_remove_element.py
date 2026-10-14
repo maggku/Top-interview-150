@@ -51,3 +51,25 @@ Constraints:
     0 <= val <= 100
 
 """
+
+
+class Solution:
+    def removeElement(self, nums: list[int], val: int) -> int:
+
+        x = 0
+        y = len(nums) - 1
+        k = 0
+
+        while x <= y:
+            if nums[y] == val:
+                y -= 1
+            elif nums[x] == val:
+                nums[x] = nums[y]
+                x += 1
+                y -= 1
+                k += 1
+            else:
+                x += 1
+                k += 1
+
+        return k
