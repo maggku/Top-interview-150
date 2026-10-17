@@ -17,7 +17,7 @@ int[] expectedNums = [...]; // The expected answer with correct length
 int k = removeDuplicates(nums); // Calls your implementation
 
 assert k == expectedNums.length;
-for (int i = 0; i < k; i++) {
+for (i = 0; i < k; i++) {
     assert nums[i] == expectedNums[i];
 }
 
@@ -49,9 +49,11 @@ Constraints:
 
 
 """
+nums = [1,2,2,3,3,4]
+
 
 class Solution:
-    def removeDuplicates(self, nums: List[int]) -> int:
+    def removeDuplicates(self, nums):
 
         if not nums:
             k = 0
@@ -65,7 +67,7 @@ class Solution:
                 k+=1
 
         return k
-
+"""
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
 
@@ -99,3 +101,4 @@ class Solution:
                 continue
 
         return k
+"""
