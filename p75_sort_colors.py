@@ -29,15 +29,6 @@ The array has one each of 0, 1, and 2, arranged in-place in the order 0, 1, 2.
 
 
 
-Constraints:
-
-    n == nums.length
-    1 <= n <= 300
-    nums[i] is either 0, 1, or 2.
-
-
-
-Follow up: Could you come up with a one-pass algorithm using only constant extra space?
 """
 class Solution:
     def sortColors(self, nums: List[int]) -> None:
